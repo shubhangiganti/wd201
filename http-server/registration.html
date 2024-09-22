@@ -1,58 +1,100 @@
-<html></html>
-    <head>
-        <style>
-            input#name:invalid {
-                border: 1px solid orangered;
-            }
-            input#name:valid{
-                border: 1px solid rgb(147, 207, 26);
-            }
-            body {
-            display: grid;
-            place-items: center;
-            }
+    <html>
+        <head>
+           <style>
+              input#name:invalid {
+    border: 1px solid orangered;
+}
+input#name:valid{
+    border: 1px solid rgb(147, 207, 26);
+}
 
-            form {
-        
-            padding: 20px;
-            border: 10px solid #6f40c6; 
-            width: 300px;
-            margin-bottom: 40px;
-            }
+body {
+    background-image: url(galaxy\ image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        display: grid;
+        place-items: center;
+}
 
-        
-            th, td {
-                border: 1px solid lightgreen; 
-                padding: 10px; 
-                text-align: left; 
-            }
-            
-        
-            
-        </style>
-        <h1>
-            form page
-        </h1>
-    </head>
-    <body>
-        <form id="formOfUser" >
-            <label > full name</label><br>
-            <input type="text" id="name" required ><br>
-            <label > pasword</label><br>
-            <input type="password" id="password" required><br>
-            <label > email</label><br>
-            <input type="email" id="email" required><br>
-            <label > DOB</label><br>
-            <input type="date" id="dob" required><br><br>
-            <label > accept terms and conditions?</label>
-            <input type="checkbox" id="acceptTerms" required><br><br>
-            <label > click to submit</label><br>
-            <button type="submit" required> submit </button><br>
-        </form>
-        <div id="user-Entries"></div>
-        
-        <script>         
-let userform = document.getElementById("formOfUser");
+
+form {
+
+padding: 20px;
+border: 8px aliceblue;
+width: 350px;
+margin-bottom: 40px;
+box-shadow: 50px aliceblue;
+border-radius: 20px;
+box-shadow: 0 0 20px aliceblue;
+
+}
+input::placeholder {
+    color: white;
+    opacity: 0.8;
+    
+}
+
+
+th, td {
+    border: 2px solid gray; 
+    padding: 10px; 
+    text-align: center; 
+    color:aliceblue;
+    font-size:small;
+    border-radius: 10px;
+}
+h2{
+    text-shadow: 10px;
+    color: aliceblue;
+    
+}
+label{
+    color: aliceblue;
+    font-size:medium;
+}
+caption{
+    color: antiquewhite;
+    font-size: large;
+}
+input,button {
+    align-items: center;
+    width: 300px;
+    padding: 10px;
+    margin: 1px 0;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: transparent; 
+    color: white;
+    
+}
+
+input[type="checkbox"] {
+   
+    width: 20px;
+    height: 20px;
+    accent-color: white; 
+    
+}
+           </style>
+            <h2>
+                Form Page
+            </h2>
+        </head>
+        <body>
+            <form id="formOfUser" >
+                
+                    <input type="text" id="name" required placeholder="Full name"><br><br>
+                    <input type="password" id="password" required placeholder="Password"><br><br>
+                    <input type="email" id="email" required placeholder="Email"><br><br>
+                    <input type="date" id="dob" required><br><br>
+                    <label >Accept terms and conditions?</label>
+                    <input type="checkbox" id="acceptTerms" required><br><br>
+                    <button type="submit" required> Submit </button><br>
+                    </form>
+                    <div id="user-Entries"></div>
+                    <script >   
+                        let userform = document.getElementById("formOfUser");
 
 const getEntries = () => {
   let entries = sessionStorage.getItem("userEntries");
@@ -82,7 +124,7 @@ const displayEntries = () => {
     })
     .join("\n");
   const table = `<table>
-  <caption>Entries Table</caption>
+  <caption >Entries Table</caption>
     <tr>
       <th>Name</th>
       <th>Email</th>
@@ -150,6 +192,6 @@ const saveForm = (event) => {
 userform.addEventListener("submit", saveForm);
 displayEntries();
 
-        </script>
-    </body>
-</html>
+                    </script>
+        </body>
+    </html>
