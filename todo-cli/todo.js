@@ -50,7 +50,7 @@ const todoList = () => {
       .map((item) => {
         const status = item.completed ? "[x]" : "[ ]";
         const showDate = item.dueDate === today ? "" : item.dueDate;
-        return `${status} ${item.name} ${showDate}`;
+        return `${status} ${item.title} ${showDate}`;
       })
 
       .join("\n");
