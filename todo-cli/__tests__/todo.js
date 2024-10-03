@@ -1,6 +1,11 @@
 const todoList = require("../todo");
 const { all, markAsComplete, add } = todoList();
 describe("shubha test suite ", () => {
+  date.toLocaleDateString("en-CA");
+  const today = formatDate(new Date());
+  const yesterday = formatDate(new Date(Date.now() - 86400000));
+  const tomorrow = formatDate(new Date(Date.now() + 86400000));
+
   test("should add new todo", () => {
     expect(all.length).toBe(0);
     add({
@@ -18,12 +23,7 @@ describe("shubha test suite ", () => {
   });
 
   test("checks retrieval of overdue items", () => {
-    add({
-      title: "overdue task",
-      completed: false,
-      dueDate: yesterday,
-    });
-    expect(all[1].dueDate).toBe(yesterday);
+    expect(all[0].dueDate).toBe(yesterday);
   });
 
   test("checks retrieval of due Today items", () => {
@@ -32,7 +32,7 @@ describe("shubha test suite ", () => {
       completed: false,
       dueDate: today,
     });
-    expect(all[2].dueDate).toBe(today);
+    expect(all[0].dueDate).toBe(today);
   });
 
   test("checks retrieval of due later items", () => {
@@ -41,6 +41,6 @@ describe("shubha test suite ", () => {
       completed: false,
       dueDate: tomorrow,
     });
-    expect(all[3].dueDate).toBe(tomorrow);
+    expect(all[0].dueDate).toBe(tomorrow);
   });
 });

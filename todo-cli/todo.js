@@ -1,6 +1,6 @@
 const todoList = () => {
   all = [];
-  const formatDate = (date) => date.toISOString().split("T")[0];
+  const formatDate = (date) => date.toLocaleDateString("en-CA");
 
   const today = formatDate(new Date()); // Current date
   const yesterday = formatDate(new Date(Date.now() - 86400000));
