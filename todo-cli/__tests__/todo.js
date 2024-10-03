@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 const todoList = require("../todo");
 const { all, markAsComplete, add } = todoList();
-describe("shubha test suite ", () => {
+denpmscribe("shubha test suite ", () => {
   test("should add new todo", () => {
     expect(all.length).toBe(0);
     add({
