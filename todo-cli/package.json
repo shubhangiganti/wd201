@@ -19,14 +19,9 @@
     "prettier": "^3.3.3"
   },
   "lint-staged": {
-  "*.js": [
-    "eslint",
-    "prettier --write ."
-  ]
-},
-"husky": {
-  "hooks": {
-    "pre-commit": "npx lint-staged"
+    "*.js": [
+      "eslint",
+      "prettier --write ."
+    ]
   }
-}
 }
