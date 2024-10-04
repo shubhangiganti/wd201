@@ -1,10 +1,5 @@
 const todoList = () => {
   all = [];
-  const formatDate = (date) => date.toLocaleDateString("en-CA");
-
-  const today = formatDate(new Date()); // Current date
-  const yesterday = formatDate(new Date(Date.now() - 86400000));
-  const tomorrow = formatDate(new Date(Date.now() + 86400000));
 
   const add = (todoItem) => {
     all.push(todoItem);
@@ -16,7 +11,7 @@ const todoList = () => {
   const overdue = () => {
     // Write the date check condition here and return the array
     // of overdue items accordingly.
-    over = [];
+    let over = [];
     all.forEach((element) => {
       if (element.dueDate === yesterday) {
         over.push(element);
@@ -28,7 +23,7 @@ const todoList = () => {
   const dueToday = () => {
     // Write the date check condition here and return the array
     // of todo items that are due today accordingly.
-    toda = [];
+    let toda = [];
     all.forEach((element) => {
       if (element.dueDate === today) {
         toda.push(element);
@@ -40,7 +35,7 @@ const todoList = () => {
   const dueLater = () => {
     // Write the date check condition here and return the array
     // of todo items that are due later accordingly.
-    later = [];
+    letlater = [];
     all.forEach((element) => {
       if (element.dueDate === tomorrow) {
         later.push(element);
