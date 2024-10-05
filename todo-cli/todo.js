@@ -1,5 +1,9 @@
 const todoList = () => {
-  all = [];
+  const formatDate = (date) => date.toISOString().slice(0, 10);
+  const today = formatDate(new Date());
+  const yesterday = formatDate(new Date(Date.now() - 86400000));
+  const tomorrow = formatDate(new Date(Date.now() + 86400000));
+  let all = [];
 
   const add = (todoItem) => {
     all.push(todoItem);

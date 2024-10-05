@@ -35,20 +35,23 @@ describe("shubha test suite", () => {
   });
 
   test("checks retrieval of overdue items", () => {
-    expect(overdue().length).toBe(overdue().length);
+    let initialOverdue = overdue().length;
+    expect(overdue().length).toBe(initialOverdue);
     add({ title: "overdue task", completed: false, dueDate: yesterday });
-    expect(overdue().length).toBe(overdue().length + 1); // Expect one overdue task
+    expect(overdue().length).toBe(initialOverdue + 1); // Expect one overdue task
   });
 
   test("checks retrieval of due Today items", () => {
-    expect(dueToday().length).toBe(dueToday().length);
-    add({ title: "overdue task", completed: false, dueDate: yesterday });
-    expect(dueToday().length).toBe(dueToday().length + 1); // Expect one due today task
+    let initialdueToday = dueToday().length;
+    expect(dueToday().length).toBe(initialdueToday);
+    add({ title: "overdue task", completed: false, dueDate: today });
+    expect(dueToday().length).toBe(initialdueToday + 1); // Expect one due today task
   });
 
   test("checks retrieval of due later items", () => {
-    expect(dueLater().length).toBe(dueLater().length);
-    add({ title: "overdue task", completed: false, dueDate: yesterday });
-    expect(dueLater().length).toBe(dueLater().length + 1); // Expect one due later task
+    let initialdueLater = dueLater().length;
+    expect(dueLater().length).toBe(initialdueLater);
+    add({ title: "overdue task", completed: false, dueDate: tomorrow });
+    expect(dueLater().length).toBe(initialdueLater + 1); // Expect one due later task
   });
 });
