@@ -4,7 +4,9 @@
   "description": "my todo in node JS",
   "main": "todo.js",
   "scripts": {
-    "test": "jest",
+    "db:create:test": "NODE_ENV=test npx sequelize-cli db:create",
+    "pretest": "NODE_ENV=test npx sequelize-cli db:drop && NODE_ENV=test npx sequelize-cli db:create",
+    "test": "NODE_ENV=test jest --detectOpenHandles",
     "prepare": "husky install"
   },
   "author": "Shubhangi Ganti <gshubhangi2004@gmail.com>",
@@ -23,5 +25,9 @@
       "eslint",
       "prettier --write ."
     ]
+  },
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "mysql2": "^3.11.3"
   }
 }
