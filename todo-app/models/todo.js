@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       return this.create({ title: title, dueDate: dueDate, completed: false });
     }
     markAsCompleted() {
-      return this.update({ complete: true });
+      return this.update({ completed: true });
     }
   }
   Todo.init(
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Todo",
-    }
+    },
   );
   return Todo;
 };
