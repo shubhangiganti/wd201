@@ -18,6 +18,7 @@ export default [
     },
     rules: {
       // Add your custom rules here
+      // I have  addedc a new comment
     },
   },
 ];
