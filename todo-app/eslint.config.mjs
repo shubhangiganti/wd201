@@ -1,24 +1,10 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 
+
+/** @type {import('eslint').Linter.Config[]} */
 export default [
-  {
-    files: ["*/.js"],
-    languageOptions: {
-      sourceType: "commonjs",
-      ecmaVersion: "latest",
-      globals: {
-        ...globals.browser, // Define global variables here
-        ...globals.node,
-        jest: true,
-      },
-    },
-    plugins: {
-      js: pluginJs,
-    },
-    rules: {
-      // Add your custom rules here
-      // I have  addedc a new comment
-    },
-  },
+  {files: ["**/*.js"], languageOptions: {sourceType: "commonjs"}},
+  {languageOptions: { globals: globals.browser }},
+  pluginJs.configs.recommended,
 ];
