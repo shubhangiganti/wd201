@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 app.get("/todos", (request, response) => {
-  console.log("Todo list hehee");
+  console.log("Todo list ");
 });
 
 app.post("/todos", async (request, response) => {
