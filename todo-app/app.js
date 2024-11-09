@@ -8,8 +8,12 @@ app.get("/todos", (request, response) => {
   console.log("Todo list ");
 });
 
+// Remove unused variables
+//const request = ...;
+//const response = ...;
+
 app.post("/todos", async (request, response) => {
-  console.log("creating a todo....", request.body);
+  console.log("creating a todo..", request.body);
   try {
     const todo = await Todo.addTodo({
       title: request.body.title,
