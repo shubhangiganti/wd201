@@ -1,4 +1,16 @@
-body{
+h1{
     color: blueviolet;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+footer{
+    color: blue;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+table {
+    width: 100%;
+    border-collapse: separate;
+  }
+td,tr,th{
+    border: 2px;
+    border-style: groove;
 }

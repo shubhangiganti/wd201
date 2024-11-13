@@ -1,0 +1,19 @@
+<table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Due Date</th>
+        <th>Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% allTodos.forEach(todo => { %>
+        <tr>
+          <td><%= todo.title %></td>
+          <td align="center"><%= todo.dueDate %></td>
+          <td align="center"><%= todo.completed ? "Yes" : "No" %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  
